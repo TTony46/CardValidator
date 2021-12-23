@@ -6,14 +6,15 @@ namespace CardValidationProject
 {
     class Program
     {
-        static List<int> getCreditCardDetails()
+        static List<int> GetCreditCardDetails()
         {
             var cardNumbers = new List<int>();
-            Console.WriteLine("Enter the 16 digit credit card number (eg: 1111 2222 3333 4444): ");
+            Console.WriteLine("Enter the 16 digit credit card number: ");
             var input = (Console.ReadLine());
 
             for (int i = 0; i < input.Length; i++)
             {
+                // For the case if user enters spaces between their digits
                 while (input[i] == ' ')
                 {
                     i++;
@@ -23,20 +24,21 @@ namespace CardValidationProject
             return cardNumbers;
         }
 
-        static void printCardDetails(List<int> cardNumbers)
+        static void PrintCardDetails(List<int> cardNumbers)
         {
             string result = "";
             for (int i = 0; i < cardNumbers.Count; i++)
             {      
-                result += cardNumbers[i].ToString();
-                if (i != 0 && (i+1) % 4 == 0)
+                result += cardNumbers[i].ToString();            
+                if (i != 0 && (i+1) % 4 == 0)  // Adds a space (' ') after every four digits. 
                 { 
                     result += " ";
                 }
             }
             Console.WriteLine("Your card numbers are: " + result);
         }
-        static string isCardNumbersValid(List<int> cardNumbers)
+
+        static string IsCardNumbersValid(List<int> cardNumbers)
         {
             int oddIndexSum = 0;
             int evenIndexSum = 0;
@@ -46,27 +48,21 @@ namespace CardValidationProject
                 int currentCardDigit = cardNumbers[i];
                 bool isIndexEven = (i % 2 == 0);
 
-                if (!isIndexEven)
-                {
-                    oddIndexSum += currentCardDigit;
-                }
+                // Uses Luhn Check Algorithm
+                if (!isIndexEven) { oddIndexSum += currentCardDigit; }
                 if (isIndexEven)
                 {
                     if ((currentCardDigit * 2) >= 10)
                     {
-                        //Console.WriteLine("Added: " + ((currentCardDigit * 2) - 9));
                         evenIndexSum += ((currentCardDigit * 2) - 9);
                     }
                     else
                     {
                         evenIndexSum += (currentCardDigit * 2);
-                        //Console.WriteLine("Added: " + currentCardDigit);
                     }
                 }
             }
             int total = oddIndexSum + evenIndexSum;
-
-            Console.WriteLine("oddIndexSum is: " + oddIndexSum + " and evenIndexSum is: " + evenIndexSum);
             if (total % 10 == 0)
             {
                 return ("Card Numbers are valid.");
@@ -79,15 +75,22 @@ namespace CardValidationProject
             bool loop = false;
             do
             {
-                var cardDetails = getCreditCardDetails();
-                printCardDetails(cardDetails);
-                Console.WriteLine("\n"+isCardNumbersValid(cardDetails));
+                var cardDetails = GetCreditCardDetails();
+                while (!(cardDetails.Count == 16))
+                {
+                    Console.WriteLine("Card entered is not 16 digits, please try again.");
+                    cardDetails = GetCreditCardDetails();
+                }
 
-                Console.WriteLine("Do you want to try again? (y/n) ");
+                PrintCardDetails(cardDetails);
+                Console.WriteLine("\n"+IsCardNumbersValid(cardDetails));
+
+                // If user wants to rerun the program, changes the 'while' condition to true.
+                Console.WriteLine("\nTry again? (y/n) ");
                 var input = Console.ReadLine();
 
                 if (input == null) return;
-                if (input.ToLower() == "y")
+                else if (input.ToLower() == "y")
                 {
                     loop = true;
                 } 
@@ -96,8 +99,7 @@ namespace CardValidationProject
                     Console.WriteLine("\nProgram exited successfully");
                     loop = false;                   
                 }
-            } while (loop == true);
-           
+            } while (loop == true);     
         }
     }
 }

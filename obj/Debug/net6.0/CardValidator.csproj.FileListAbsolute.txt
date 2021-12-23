@@ -1,0 +1,15 @@
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\bin\Debug\net6.0\CardValidator.exe
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\bin\Debug\net6.0\CardValidator.deps.json
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\bin\Debug\net6.0\CardValidator.runtimeconfig.json
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\bin\Debug\net6.0\CardValidator.dll
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\bin\Debug\net6.0\ref\CardValidator.dll
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\bin\Debug\net6.0\CardValidator.pdb
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\CardValidator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\CardValidator.AssemblyInfoInputs.cache
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\CardValidator.AssemblyInfo.cs
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\CardValidator.csproj.CoreCompileInputs.cache
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\CardValidator.dll
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\ref\CardValidator.dll
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\CardValidator.pdb
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\CardValidator.genruntimeconfig.cache
+C:\Users\Tony\Desktop\CreditCardValidator\CardValidator\obj\Debug\net6.0\CardValidator.csproj.AssemblyReference.cache
